@@ -1,0 +1,366 @@
+/* Default (Light) Theme */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    min-height: 600px;  /* Added: makes container 20% larger */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;  /* Reduced from 20px to 10px (50% less) */
+    padding: 5px 0;  /* Added: reduced padding for less height */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;  /* Slightly smaller for less height */
+}
+
+/* Header controls container */
+.header-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* LLM Select Box */
+#llm-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#llm-select:hover {
+    border-color: #007bff;
+}
+
+#llm-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Switch Theme Toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;  /* Added: allows main to take remaining space */
+}
+
+#chat {
+    flex: 1;  /* Changed: chat takes all available space */
+    min-height: 450px;  /* Added: ensures minimum height */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Message container */
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Message header (You: / Bot:) */
+.message-header {
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
+}
+
+.message.user .message-header {
+    color: #007bff;
+}
+
+.message.bot .message-header {
+    color: #28a745;
+}
+
+/* Message content */
+.message-content {
+    padding: 10px 15px;
+    border-radius: 8px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.message.user .message-content {
+    background-color: #e3f2fd;
+    border-left: 3px solid #007bff;
+}
+
+.message.bot .message-content {
+    background-color: #f1f8e9;
+    border-left: 3px solid #28a745;
+}
+
+/* Markdown styles within messages */
+.message-content h1,
+.message-content h2,
+.message-content h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.message-content h1 {
+    font-size: 1.5em;
+}
+
+.message-content h2 {
+    font-size: 1.3em;
+}
+
+.message-content h3 {
+    font-size: 1.1em;
+}
+
+.message-content p {
+    margin: 8px 0;
+}
+
+.message-content ul,
+.message-content ol {
+    margin: 8px 0;
+    padding-left: 25px;
+}
+
+.message-content code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.message-content pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.message-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.message-content blockquote {
+    border-left: 3px solid #ccc;
+    margin: 8px 0;
+    padding-left: 15px;
+    color: #666;
+}
+
+.message-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.message-content a:hover {
+    text-decoration: underline;
+}
+
+/* Input container with textarea and button */
+.input-container {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;  /* Changed: makes button match textarea height */
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 40px;
+    max-height: 120px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+button#send-btn {
+    padding: 0 16px;  /* Changed: removed vertical padding */
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.1s;
+    min-width: 50px;  /* Changed: slightly wider for better proportion */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;  /* Added: makes button stretch to textarea height */
+}
+
+button#send-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button#send-btn:active {
+    transform: scale(0.95);
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #333;
+    color: #ddd;
+}
+
+.container.dark {
+    background: #222;
+    color: #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+header.dark h1 {
+    color: #ddd;
+}
+
+main.dark #chat {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+.message.user.dark .message-content {
+    background-color: #1e3a5f;
+    border-left-color: #4a90e2;
+}
+
+.message.bot.dark .message-content {
+    background-color: #2d3a2d;
+    border-left-color: #5cb85c;
+}
+
+.message.user.dark .message-header {
+    color: #4a90e2;
+}
+
+.message.bot.dark .message-header {
+    color: #5cb85c;
+}
+
+.message-content.dark code {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.message-content.dark pre {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+main.dark #user-input {
+    background-color: #333;
+    border-color: #555;
+    color: #ddd;
+}
+
+main.dark button#send-btn {
+    background-color: #17a2b8;
+}
+
+main.dark button#send-btn:hover {
+    background-color: #138496;
+}
+
+/* Dark theme for select box */
+#llm-select.dark {
+    background-color: #333;
+    border-color: #555;
+    color: #ddd;
+}
