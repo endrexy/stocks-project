@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance News</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-btn" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Side Menu -->
+    <nav class="side-menu" id="side-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul class="menu-items">
+            <li><a href="/">Home</a></li>
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="/companies">Companies</a></li>
+            <li><a href="/news" class="active">News</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container">
+        <h1 class="page-title">Finance News - December 19, 2025</h1>
+        
+        <div class="news-container">
+            <article class="news-article">
+                <h2>Markets Rally as US Inflation Eases More Than Expected</h2>
+                <span class="news-date">December 19, 2025</span>
+                <p>Markets rallied on Thursday as US inflation eased more than expected in November, dropping to 2.6% from 3.0% year-over-year, boosting risk appetite across global markets. The moderation may partly reflect delayed data collection due to the recent government shutdown. Treasury yields dropped and investors' rate-cut expectations for the Fed remained broadly unchanged.</p>
+                <a href="https://www.caixabankresearch.com/en/publications/financial-markets-daily-report/19-december-2025" target="_blank" class="news-link">Read more →</a>
+            </article>
+
+            <article class="news-article">
+                <h2>Bank of Japan Raises Key Rate to 30-Year High</h2>
+                <span class="news-date">December 19, 2025</span>
+                <p>World shares advanced on Friday after the Bank of Japan raised its key policy rate by 25 basis points to its highest level in 30 years at 0.75%. The move signals confidence in Japan's economic recovery and marks a significant shift from the country's long-standing ultra-loose monetary policy.</p>
+                <a href="https://www.bnnbloomberg.ca/markets/2025/12/19/world-shares-advance-after-japan-raises-its-key-interest-rate" target="_blank" class="news-link">Read more →</a>
+            </article>
+
+            <article class="news-article">
+                <h2>U.S. Stock Futures Gain on Tech Rebound</h2>
+                <span class="news-date">December 19, 2025</span>
+                <p>U.S. stock index futures edged higher on Friday, with Nasdaq-100 contracts leading gains. Stocks jumped Thursday, snapping a losing streak after an encouraging readout on inflation data. The tech sector showed signs of recovery after recent volatility, with investors rotating back into growth stocks.</p>
+                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-12-19-2025" target="_blank" class="news-link">Read more →</a>
+            </article>
+
+            <article class="news-article">
+                <h2>Initial Jobless Claims Fall by 13,000</h2>
+                <span class="news-date">December 19, 2025</span>
+                <p>Initial jobless claims fell by 13,000 last week, signaling continued strength in the labor market despite broader economic uncertainties. The data supports the case for further Federal Reserve interest rate cuts as the economy navigates toward a soft landing.</p>
+                <a href="https://www.morningstar.com/news/dow-jones/202512192028/european-midday-briefing-shares-steady" target="_blank" class="news-link">Read more →</a>
+            </article>
+
+            <article class="news-article">
+                <h2>December Trading: Markets Navigate Year-End Volatility</h2>
+                <span class="news-date">December 19, 2025</span>
+                <p>As 2025's last full week of trading draws to a close, Wall Street is weighing catch-up jobs and inflation data. Despite Thursday's recovery, stocks are on track for substantial losses in the last full week of trading. Both the S&P 500 and Nasdaq Composite have declined nearly 1% this week, though hopes for a "Santa rally" remain.</p>
+                <a href="https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-futures-rise" target="_blank" class="news-link">Read more →</a>
+            </article>
+        </div>
+
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-label">Dark Mode</span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

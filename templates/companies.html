@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-btn" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Side Menu -->
+    <nav class="side-menu" id="side-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul class="menu-items">
+            <li><a href="/">Home</a></li>
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="/companies" class="active">Companies</a></li>
+            <li><a href="/news">News</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container">
+        <h1 class="page-title">Company Financial Data</h1>
+        
+        <div class="table-container">
+            <table class="companies-table">
+                <thead>
+                    <tr>
+                        <th>
+                            Company
+                            <span class="sort-arrows">
+                                <span class="arrow-up">▲</span>
+                                <span class="arrow-down">▼</span>
+                            </span>
+                        </th>
+                        <th>
+                            Ticker
+                            <span class="sort-arrows">
+                                <span class="arrow-up">▲</span>
+                                <span class="arrow-down">▼</span>
+                            </span>
+                        </th>
+                        <th>
+                            Price
+                            <span class="sort-arrows">
+                                <span class="arrow-up">▲</span>
+                                <span class="arrow-down">▼</span>
+                            </span>
+                        </th>
+                        <th>
+                            Change
+                            <span class="sort-arrows">
+                                <span class="arrow-up">▲</span>
+                                <span class="arrow-down">▼</span>
+                            </span>
+                        </th>
+                        <th>
+                            Market Cap
+                            <span class="sort-arrows">
+                                <span class="arrow-up">▲</span>
+                                <span class="arrow-down">▼</span>
+                            </span>
+                        </th>
+                        <th>
+                            P/E Ratio
+                            <span class="sort-arrows">
+                                <span class="arrow-up">▲</span>
+                                <span class="arrow-down">▼</span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple Inc.</td>
+                        <td>AAPL</td>
+                        <td>$185.23</td>
+                        <td class="positive">+2.3%</td>
+                        <td>$2.85T</td>
+                        <td>29.4</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft Corporation</td>
+                        <td>MSFT</td>
+                        <td>$378.45</td>
+                        <td class="positive">+1.8%</td>
+                        <td>$2.81T</td>
+                        <td>35.2</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon.com Inc.</td>
+                        <td>AMZN</td>
+                        <td>$152.67</td>
+                        <td class="negative">-0.9%</td>
+                        <td>$1.58T</td>
+                        <td>48.6</td>
+                    </tr>
+                    <tr>
+                        <td>Alphabet Inc.</td>
+                        <td>GOOGL</td>
+                        <td>$141.23</td>
+                        <td class="positive">+0.7%</td>
+                        <td>$1.77T</td>
+                        <td>25.8</td>
+                    </tr>
+                    <tr>
+                        <td>Tesla Inc.</td>
+                        <td>TSLA</td>
+                        <td>$248.92</td>
+                        <td class="negative">-3.2%</td>
+                        <td>$791B</td>
+                        <td>72.1</td>
+                    </tr>
+                    <tr>
+                        <td>Meta Platforms Inc.</td>
+                        <td>META</td>
+                        <td>$356.89</td>
+                        <td class="positive">+1.5%</td>
+                        <td>$906B</td>
+                        <td>28.3</td>
+                    </tr>
+                    <tr>
+                        <td>NVIDIA Corporation</td>
+                        <td>NVDA</td>
+                        <td>$495.34</td>
+                        <td class="positive">+4.2%</td>
+                        <td>$1.22T</td>
+                        <td>63.4</td>
+                    </tr>
+                    <tr>
+                        <td>Berkshire Hathaway Inc.</td>
+                        <td>BRK.B</td>
+                        <td>$412.56</td>
+                        <td class="negative">-0.3%</td>
+                        <td>$891B</td>
+                        <td>21.7</td>
+                    </tr>
+                    <tr>
+                        <td>JPMorgan Chase & Co.</td>
+                        <td>JPM</td>
+                        <td>$178.23</td>
+                        <td class="positive">+0.9%</td>
+                        <td>$513B</td>
+                        <td>12.4</td>
+                    </tr>
+                    <tr>
+                        <td>Visa Inc.</td>
+                        <td>V</td>
+                        <td>$267.89</td>
+                        <td class="positive">+1.2%</td>
+                        <td>$544B</td>
+                        <td>31.5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-label">Dark Mode</span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 from perplexity import Perplexity
 import keys
 
-client = Perplexity(api_key=keys.PERPLEXITY_API_KEY)
+client = Perplexity(api_key=keys.API_KEY_PERPLEXITY)
 
 completion = client.chat.completions.create(
     messages=[

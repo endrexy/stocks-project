@@ -1,7 +1,7 @@
 from perplexity import Perplexity
 import keys
 
-client = Perplexity(api_key=keys.PERPLEXITY_API_KEY)
+client = Perplexity(api_key=keys.API_KEY_PERPLEXITY)
 
 def get_ai_response(user_message, chat_history):
     print("using perplexity pro\n")

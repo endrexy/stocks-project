@@ -14,6 +14,22 @@ app.secret_key = 'very-secret-key'  # For sessions
 def index():
     return render_template('index.html')
 
+# Serve the chat page
+@app.route('/chat', methods=['GET'])
+def chat_get():
+    return render_template('chat.html')
+
+# Serve the companies page
+@app.route('/companies', methods=['GET'])
+def companies():
+    return render_template('companies.html')
+
+# Serve the news page
+@app.route('/news', methods=['GET'])
+def news():
+    return render_template('news.html')
+
+
 # API Endpoint for chat
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -26,17 +42,20 @@ def chat():
     app.logger.info(f"Received message: {user_message}\n") 
 
     # Initialize chat history if new session
+    '''
     if 'chat_history' not in session:
         session['chat_history'] = [
             {"role": "system", "content": "You are a helpful assistant."}
         ]
+    '''
+    chat_history = [{"role": "system", "content": "You are a helpful assistant."}]
 
     # Choose LLM based on user selection
     match llm_choice:
         case 'perplexity':
-            bot_response, session['chat_history'] = perplexity_LLM.get_ai_response(user_message, session['chat_history'])
+            bot_response, chat_history = perplexity_LLM.get_ai_response(user_message, chat_history)
         case 'ollama':
-            bot_response, session['chat_history'] = ollama_LLM.get_ai_response(user_message, session['chat_history'])
+            bot_response, chat_history = ollama_LLM.get_ai_response(user_message, chat_history)
         case _:
             return jsonify({'error': 'Invalid LLM choice'}), 400
     
